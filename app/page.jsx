@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 function page() {
   return (
-    <div className="app-wrapper">
+    <div className="app-wrapper mb-6">
       <div className="title-wrapper text-white text-center m-auto mt-[10rem] w-fit">
         <motion.div
           initial={{ opacity: 0 }}
@@ -15,11 +15,13 @@ function page() {
           <h1 className="title text-9xl" id="title">
             Dream Keeper
           </h1>
-          <p className="text-3xl">Améliorer votre rappelle onirique.</p>
+          <p className="text-3xl opacity-50">Améliorer votre rappelle onirique.</p>
         </motion.div>
       </div>
       <div className="options-wrapper flex justify-center mt-5">
-        <Button type={"primary"}>Se connecter</Button>
+        <motion.div whileHover={{scale: 1.1}}>
+          <Button type={"primary"}>Se connecter</Button>
+        </motion.div>
       </div>
     </div>
   );
