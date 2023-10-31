@@ -1,15 +1,17 @@
 "use client";
 
 import Button from "@/components/Button";
+import Proscard from "@/components/Proscard";
 import { motion } from "framer-motion";
 
 function page() {
   return (
-    <div className="app-wrapper mb-6">
+    <div className="app-wrapper">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: -20 }}
         transition={{ type: "spring", stiffness: 100 }}
+        className="Option-title-anim"
       >
         <div className="title-wrapper text-white text-center m-auto mt-[10rem] w-fit">
           <h1
@@ -29,6 +31,14 @@ function page() {
           </Button>
         </div>
       </motion.div>
+        <div className="benefits-container m-auto w-fit mt-[10rem]">
+          <h1 className="text-white text-6xl">Pourquoi utiliser Dream Keeper ? </h1>
+          <div className="card-container flex flex-row items-center justify-center">
+            <Proscard />
+            <Proscard />
+            <Proscard />
+          </div>
+        </div>
     </div>
   );
 }
