@@ -12,16 +12,15 @@ function page() {
           animate={{ opacity: 1, y: -20 }}
           transition={{ type: "spring", stiffness: 100 }}
         >
-          <h1 className="title text-9xl" id="title">
+          <h1 className="title text-9xl font-extrabold text-transparent bg-gradient-to-r bg-clip-text from-purple-400 to-pink-600" id="title">
             Dream Keeper
           </h1>
-          <p className="text-3xl opacity-50">Améliorer votre rappelle onirique.</p>
+          <p className="text-3xl opacity-70">L'art de rêver.</p>
         </motion.div>
       </div>
-      <div className="options-wrapper flex justify-center mt-5">
-        <motion.div whileHover={{scale: 1.1}}>
-          <Button type={"primary"}>Se connecter</Button>
-        </motion.div>
+      <div className="options-wrapper flex items-center justify-between m-auto w-[300px] text-center mt-5">
+          <Button type={"primary"} urlPath={"/login"}>Se connecter</Button>
+          <Button type={"secondary"} urlPath={"/register"}>S'enregister</Button>
       </div>
     </div>
   );
