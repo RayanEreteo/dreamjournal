@@ -30,15 +30,15 @@ function page() {
             S'enregister
           </Button>
         </div>
-      </motion.div>
         <div className="benefits-container m-auto w-fit mt-[10rem]">
           <h1 className="text-white text-6xl">Pourquoi utiliser Dream Keeper ? </h1>
-          <div className="card-container flex flex-row items-center justify-center">
-            <Proscard />
-            <Proscard />
-            <Proscard />
+          <div className="card-container flex flex-row items-center justify-around">
+            <Proscard prostitle={"Journal des rêves inclus."} prosdesc={"Créer un compte pour accéder à un journal des rêves."}/>
+            <Proscard prostitle={"Journal des rêves inclus."} prosdesc={"Créer un compte pour accéder à un journal des rêves."}/>
+            <Proscard prostitle={"Journal des rêves inclus."} prosdesc={"Créer un compte pour accéder à un journal des rêves."}/>
           </div>
         </div>
+      </motion.div>
     </div>
   );
 }
