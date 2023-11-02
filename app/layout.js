@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: "Dream Keeper",
-  description: "Maitriser l'art des rêves lucides & améliorer votre rappel onirique grâce au journal des rêves",
+  description: "Apprenez à vous souvenir de vos rêves grâce au journal des rêves.",
   author: "Rayan Ereteo"
 }
 

@@ -20,7 +20,7 @@ function page() {
           >
             Dream Keeper
           </h1>
-          <p className="text-3xl opacity-70">L'art de rêver.</p>
+          <p className="text-3xl opacity-70">Développer votre mémoire onirique.</p>
         </div>
         <div className="options-wrapper flex items-center justify-between m-auto w-[300px] text-center mt-5">
           <Button type={"primary"} urlPath={"/login"}>
@@ -32,9 +32,7 @@ function page() {
         </div>
         <div className="benefits-container m-auto w-fit mt-[10rem]">
           <h1 className="text-white text-6xl">Pourquoi utiliser Dream Keeper ? </h1>
-          <div className="card-container flex flex-row items-center justify-around">
-            <Proscard prostitle={"Journal des rêves inclus."} prosdesc={"Créer un compte pour accéder à un journal des rêves."}/>
-            <Proscard prostitle={"Journal des rêves inclus."} prosdesc={"Créer un compte pour accéder à un journal des rêves."}/>
+          <div className="card-container flex flex-row items-center justify-around mt-6">
             <Proscard prostitle={"Journal des rêves inclus."} prosdesc={"Créer un compte pour accéder à un journal des rêves."}/>
           </div>
         </div>
