@@ -34,6 +34,7 @@ function page() {
           <h1 className="text-white text-6xl">Pourquoi utiliser Dream Keeper ? </h1>
           <div className="card-container flex flex-row items-center justify-around mt-[4rem]">
             <Proscard prostitle={"Journal des rêves inclus."} prosdesc={"Créer un compte pour accéder à un journal des rêves."}/>
+            <Proscard prostitle={"Découvrer des techniques."} prosdesc={"Découvrer plusieurs techniques pour se souvenir de vos rêves."}/>
           </div>
         </div>
       </motion.div>
