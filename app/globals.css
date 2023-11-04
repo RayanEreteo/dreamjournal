@@ -11,3 +11,28 @@
 html, body{
   overflow-x: hidden;
 }
+
+.input-field{
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus{
+  border: 5px solid rgba(43, 43, 213, 0.3);
+  outline: none;
+}
+
+.submit-button{
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  background: #007bb5;
+  transition: all 0.2s linear;
+}
+
+.submit-button:hover{
+  transform: scale(1.1);
+}
