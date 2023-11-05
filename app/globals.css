@@ -30,6 +30,7 @@ html, body{
   border-radius: 5px;
   background: #007cb577;
   appearance: none;
+  cursor: pointer;
 }
 
 .submit-button{
@@ -42,4 +43,9 @@ html, body{
 
 .submit-button:hover{
   transform: scale(1.1);
+}
+
+.inline-link{
+  color: #007cb5f7;
+  text-decoration: underline;
 }
