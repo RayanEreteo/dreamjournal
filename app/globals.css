@@ -25,6 +25,13 @@ html, body{
   outline: none;
 }
 
+.dropdown{
+  padding: 6px;
+  border-radius: 5px;
+  background: #007cb577;
+  appearance: none;
+}
+
 .submit-button{
   color: white;
   padding: 10px;
