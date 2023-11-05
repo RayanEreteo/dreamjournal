@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 function RegisterUI() {
-    const [loading, setLoading] = useState(false)
+    const [loading, setloading] = useState(false)
+    const [serverMessage, setserverMessage] = useState(null)
 
     return (
       <div className="register-wrapper w-[100vw] h-[100vh] flex items-center justify-center">
