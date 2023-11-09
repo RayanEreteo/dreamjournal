@@ -1,7 +1,5 @@
 "use client"
 
-import Image from "next/image";
-
 function Loading() {
   return (
     <div className="loading-container flex items-center h-[100vh] justify-center">
@@ -9,5 +7,5 @@ function Loading() {
     </div>
   );
 }
-
+ 
 export default Loading;
