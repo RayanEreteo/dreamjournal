@@ -6,7 +6,7 @@ import Loading from './loading'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: "Dream Keeper",
+  title: "Dream Keeper | Acceuil",
   description: "Apprenez à vous souvenir de vos rêves grâce au journal des rêves.",
   author: "Rayan Ereteo"
 }
