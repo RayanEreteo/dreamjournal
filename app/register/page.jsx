@@ -1,4 +1,4 @@
-import RegisterUI from "@/components/FullPage/RegisterUI";
+import RegisterUI from "@/components/UI/RegisterUI";
 
 export const metadata = {
   title: "Créer un compte",

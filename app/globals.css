@@ -49,3 +49,11 @@ html, body{
   color: #007cb5f7;
   text-decoration: underline;
 }
+
+.server-response-success{
+  color: green;
+}
+
+.server-response-failure{
+  color: red;
+}

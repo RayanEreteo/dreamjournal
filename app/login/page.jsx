@@ -1,4 +1,4 @@
-import LoginUI from '@/components/FullPage/LoginUI'
+import LoginUI from '@/components/UI/LoginUI'
 import React from 'react'
 
 export const metadata = {
