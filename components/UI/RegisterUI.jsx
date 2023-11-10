@@ -9,8 +9,8 @@ function RegisterUI() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setloading(true)
 
-    // Assuming you have a state variable named 'data' to store form data
     const formData = {
       email: e.target.email.value,
       password: e.target.password.value,
@@ -27,6 +27,7 @@ function RegisterUI() {
       .then((res) => res.json())
       .then((data) => {
         setserverResponse(data);
+        setloading(false)
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -57,13 +58,13 @@ function RegisterUI() {
           </div>
           <p className="mb-6">Combien de rêves vous souvenez vous par nuit ?</p>
           <select className="dropdown mb-6" name="dream_capability">
-            <option value="">Aucun rêve</option>
-            <option value="">très rarement, 1 rêve par nuit</option>
-            <option value="">1 rêve par nuit</option>
-            <option value="">+1 rêve par nuit</option>
+            <option value="none">Aucun rêve</option>
+            <option value="rarely">très rarement, 1 rêve par nuit</option>
+            <option value="everynight">1 rêve par nuit</option>
+            <option value="multiple">+1 rêve par nuit</option>
           </select>
           <br />
-          <button type="submit" className="submit-button mb-6">
+          <button type="submit" className="submit-button mb-6" disabled={loading}>
             S'inscrire
           </button>
           <p>
