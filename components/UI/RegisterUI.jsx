@@ -2,10 +2,15 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { RedirectType, useRouter } from 'next/navigation'
+
 
 function RegisterUI() {
   const [loading, setloading] = useState(false);
   const [serverResponse, setserverResponse] = useState(null);
+
+  const { push } = useRouter();
+
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -28,6 +33,10 @@ function RegisterUI() {
       .then((data) => {
         setserverResponse(data);
         setloading(false)
+
+        if (data.success == true) {
+          push("/login")
+        }
       })
       .catch((error) => {
         console.error("Error:", error);

@@ -1,6 +1,8 @@
 function MainUI() {
   return (
-    <div></div>
+    <div className="dashboard">
+      
+    </div>
   )
 }
 
