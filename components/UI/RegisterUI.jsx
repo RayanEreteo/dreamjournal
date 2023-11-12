@@ -35,7 +35,7 @@ function RegisterUI() {
         setloading(false)
 
         if (data.success == true) {
-          push("/login")
+          push("/login?200=true")
         }
       })
       .catch((error) => {
@@ -78,7 +78,7 @@ function RegisterUI() {
             S'inscrire
           </button>
           <p>
-            Vous êtes deja inscrit ?{" "}
+            Vous êtes déjà inscrit ?{" "}
             <Link href={"/login"} className="inline-link">
               Se connecter
             </Link>
