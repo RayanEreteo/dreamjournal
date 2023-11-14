@@ -29,7 +29,9 @@ function handleSubmit(e) {
       },
       body: JSON.stringify(formData),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        res.json()
+      })
       .then((data) => {
         setserverResponse(data);
         setloading(false)
