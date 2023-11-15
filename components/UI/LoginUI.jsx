@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
 function LoginUI() {
   const [loading, setloading] = useState(false);
   const [serverResponse, setserverResponse] = useState(null);
 
   const searchParams = useSearchParams();
+  const { push } = useRouter();
 
   const fromSource = searchParams.get("from");
 
@@ -32,6 +33,11 @@ function LoginUI() {
       .then((data) => {
         setserverResponse(data);
         setloading(false);
+        if (data.success === true) {
+          localStorage.setItem('auth_token', data.token)
+          localStorage.setItem("user_data",JSON.stringify(data.user_data))
+          push("/main")
+        }
       })
       .catch((error) => {
         console.error("Error:", error);
