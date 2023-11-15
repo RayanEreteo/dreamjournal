@@ -10,12 +10,11 @@ function LoginUI() {
 
   const searchParams = useSearchParams();
 
-  const registerResponse = searchParams.get("200")
+  const fromSource = searchParams.get("from");
 
-
-function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-    setloading(true)
+    setloading(true);
 
     const formData = {
       email: e.target.email.value,
@@ -29,18 +28,15 @@ function handleSubmit(e) {
       },
       body: JSON.stringify(formData),
     })
-      .then((res) => {
-        res.json()
-      })
+      .then((res) => res.json())
       .then((data) => {
         setserverResponse(data);
-        setloading(false)
+        setloading(false);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   }
-
 
   return (
     <div className="login-wrapper w-[100vw] h-[100vh] flex items-center justify-center flex-col">
@@ -64,7 +60,11 @@ function handleSubmit(e) {
             />
             <br />
           </div>
-          <button type="submit" className="submit-button mb-6" disabled={loading}>
+          <button
+            type="submit"
+            className="submit-button mb-6"
+            disabled={loading}
+          >
             Se connecter
           </button>
           <p>
@@ -85,8 +85,15 @@ function handleSubmit(e) {
           </p>
         </form>
       </div>
-      <div className={`register-response mt-6 text-white bg-red-500 w-[100vw] text-center ${registerResponse ? "block" : "hidden"}`}>
-        <p>Votre compte a été crée, veuillez vérifier votre boîte mail pour activer votre compte.</p>
+      <div
+        className={`register-response mt-6 text-white bg-red-500 w-[100vw] text-center ${
+          fromSource == "register" ? "block" : "hidden"
+        }`}
+      >
+        <p>
+          Votre compte a été crée, veuillez vérifier votre boîte mail pour
+          activer votre compte.
+        </p>
       </div>
     </div>
   );

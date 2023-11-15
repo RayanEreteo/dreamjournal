@@ -35,7 +35,7 @@ function RegisterUI() {
         setloading(false)
 
         if (data.success == true) {
-          push("/login?200=true")
+          push("/login?from=register")
         }
       })
       .catch((error) => {
