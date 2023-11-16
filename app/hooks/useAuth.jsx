@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+
 function useAuth() {
   const [userdata, setuserData] = useState(null);
   const [auth_token, setauthToken] = useState(null);
@@ -26,6 +27,16 @@ function useAuth() {
       if (storedUserData == null || storedAuthToken == null) {
         push('/login?from=main')
       }
+
+      fetch("http://localhost:5000/tokenchecker", {
+        method: "POST",
+        headers: {"authorization": storedAuthToken}
+      }).then(res => res.json())
+      .then(data => {
+        if (data.success === false) {
+          push('/login?from=main')
+        }
+      })
 
     }
   }, []); // Run this effect only once after component mount
