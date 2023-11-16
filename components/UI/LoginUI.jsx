@@ -101,6 +101,15 @@ function LoginUI() {
           activer votre compte.
         </p>
       </div>
+      <div
+        className={`register-response mt-6 text-white bg-red-500 w-[100vw] text-center ${
+          fromSource == "main" ? "block" : "hidden"
+        }`}
+      >
+        <p>
+          Votre jeton de connexion a expiré.
+        </p>
+      </div>
     </div>
   );
 }

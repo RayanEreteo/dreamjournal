@@ -61,7 +61,7 @@ function RegisterUI() {
               name="password"
               type="password"
               placeholder="Votre mot de passe...."
-              minlength="8"
+              minLength="8"
               required
             />
             <br />
