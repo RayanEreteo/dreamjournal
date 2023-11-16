@@ -1,9 +1,12 @@
 "use client"
-import { useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 function useAuth() {
   const [userdata, setuserData] = useState(null);
   const [auth_token, setauthToken] = useState(null);
+
+  const { push } = useRouter();
 
   useEffect(() => {
     // Check if running on the client side
@@ -19,6 +22,11 @@ function useAuth() {
       if (storedAuthToken) {
         setauthToken(storedAuthToken);
       }
+
+      if (storedUserData == null || storedAuthToken == null) {
+        push('/login?from=main')
+      }
+
     }
   }, []); // Run this effect only once after component mount
 
