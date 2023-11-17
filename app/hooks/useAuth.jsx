@@ -17,7 +17,7 @@ function useAuth() {
 
       // Update state only if data is available
       if (storedUserData) {
-        setuserData(storedUserData);
+        setuserData(JSON.parse(storedUserData));
       }
 
       if (storedAuthToken) {
