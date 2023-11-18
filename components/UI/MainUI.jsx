@@ -1,17 +1,19 @@
 "use client";
 
-import { useState } from "react"
-import useAuth from "@/app/hooks/useAuth"
+import { useState } from "react";
+import useAuth from "@/app/hooks/useAuth";
+import Dreamjournal from "../Dreamjournal";
+import Profilemenu from "../Profilemenu";
 
 function MainUI() {
-  const { userdata } = useAuth()
-  console.log(userdata)
+  const { userdata } = useAuth();
 
   return (
     <div className="dashboard">
-      <h1>{userdata?.email}</h1>
+      <Profilemenu userdata={userdata}/>
+      <Dreamjournal />
     </div>
-  )
+  );
 }
 
-export default MainUI
+export default MainUI;
