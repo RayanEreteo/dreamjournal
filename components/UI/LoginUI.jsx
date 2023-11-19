@@ -7,9 +7,9 @@ import { useSearchParams, useRouter } from "next/navigation";
 function LoginUI() {
   const [loading, setloading] = useState(false);
   const [serverResponse, setserverResponse] = useState(null);
-
-  const searchParams = useSearchParams();
   const { push } = useRouter();
+  
+  const searchParams = useSearchParams();
 
   const fromSource = searchParams.get("from");
 
