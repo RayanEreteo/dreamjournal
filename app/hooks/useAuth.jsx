@@ -10,12 +10,10 @@ function useAuth() {
   const { push } = useRouter();
 
   useEffect(() => {
-    // Check if running on the client side
     if (typeof window !== "undefined") {
       const storedUserData = localStorage.getItem("user_data");
       const storedAuthToken = localStorage.getItem("auth_token");
 
-      // Update state only if data is available
       if (storedUserData) {
         setuserData(JSON.parse(storedUserData));
       }
