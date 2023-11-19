@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 
 function useAuth() {
   const [userdata, setuserData] = useState(null);
-  const [auth_token, setauthToken] = useState(null);
 
   const { push } = useRouter();
 
@@ -16,10 +15,6 @@ function useAuth() {
 
       if (storedUserData) {
         setuserData(JSON.parse(storedUserData));
-      }
-
-      if (storedAuthToken) {
-        setauthToken(storedAuthToken);
       }
 
       if (storedUserData == null || storedAuthToken == null) {
@@ -37,7 +32,7 @@ function useAuth() {
       })
 
     }
-  }, []); // Run this effect only once after component mount
+  }, []);
 
   return {
     userdata,
