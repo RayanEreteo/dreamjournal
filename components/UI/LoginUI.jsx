@@ -79,6 +79,12 @@ function LoginUI() {
               S'inscrire
             </Link>
           </p>
+          <p>
+            {" "}
+            <Link href={"/"} className="inline-link relative top-3">
+              Retour
+            </Link>
+          </p>
           <p
             className={`${
               serverResponse &&

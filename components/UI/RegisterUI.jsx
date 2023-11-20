@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from 'next/navigation'
-
+import { useRouter } from "next/navigation";
 
 function RegisterUI() {
   const [loading, setloading] = useState(false);
@@ -11,10 +10,9 @@ function RegisterUI() {
 
   const { push } = useRouter();
 
-
   function handleSubmit(e) {
     e.preventDefault();
-    setloading(true)
+    setloading(true);
 
     const formData = {
       email: e.target.email.value,
@@ -32,10 +30,10 @@ function RegisterUI() {
       .then((res) => res.json())
       .then((data) => {
         setserverResponse(data);
-        setloading(false)
+        setloading(false);
 
         if (data.success == true) {
-          push("/login?from=register")
+          push("/login?from=register");
         }
       })
       .catch((error) => {
@@ -74,13 +72,23 @@ function RegisterUI() {
             <option value="multiple">+1 rêve par nuit</option>
           </select>
           <br />
-          <button type="submit" className="submit-button mb-6" disabled={loading}>
+          <button
+            type="submit"
+            className="submit-button mb-6"
+            disabled={loading}
+          >
             S'inscrire
           </button>
           <p>
             Vous êtes déjà inscrit ?{" "}
             <Link href={"/login"} className="inline-link">
               Se connecter
+            </Link>
+          </p>
+          <p>
+            {" "}
+            <Link href={"/"} className="inline-link relative top-3">
+              Retour
             </Link>
           </p>
           <p

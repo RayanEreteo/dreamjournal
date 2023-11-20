@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import useAuth from "@/app/hooks/useAuth";
 import Dreamjournal from "../Dreamjournal";
 import Profilemenu from "../Profilemenu";
