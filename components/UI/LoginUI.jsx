@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
 function LoginUI() {
@@ -43,6 +43,12 @@ function LoginUI() {
         console.error("Error:", error);
       });
   }
+
+  useEffect(() => {
+    if (localStorage.getItem("auth_token") != null) {
+      push("/main")
+    }
+  })
 
   return (
     <div className="login-wrapper w-[100vw] h-[100vh] flex items-center justify-center flex-col">
