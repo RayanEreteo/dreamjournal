@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 function useAuth() {
   const [userdata, setuserData] = useState(null);
+  const [authToken, setauthToken] = useState(null)
 
   const { push } = useRouter();
 
@@ -19,6 +20,8 @@ function useAuth() {
 
       if (storedAuthToken == null) {
         push('/login?from=main')
+      }else{
+        setauthToken(storedAuthToken)
       }
 
       fetch("http://localhost:5000/tokenchecker", {
@@ -36,6 +39,7 @@ function useAuth() {
 
   return {
     userdata,
+    authToken
   };
 }
 

@@ -122,6 +122,15 @@ function LoginUI() {
           Votre jeton de connexion a expiré.
         </p>
       </div>
+      <div
+        className={`register-response mt-6 text-white bg-red-500 w-[100vw] text-center ${
+          fromSource == "update" ? "block" : "hidden"
+        }`}
+      >
+        <p>
+          Votre mot de passe a changé, merci de vous reconnecter.
+        </p>
+      </div>
     </div>
   );
 }
