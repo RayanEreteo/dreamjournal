@@ -17,7 +17,7 @@ function useAuth() {
         setuserData(JSON.parse(storedUserData));
       }
 
-      if (storedUserData == null || storedAuthToken == null) {
+      if (storedAuthToken == null) {
         push('/login?from=main')
       }
 

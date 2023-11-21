@@ -31,7 +31,7 @@ function Profilemenu({ userdata }) {
           </li>
           <br />
           <li>
-            <button className="bg-red-500 text-white font-extrabold p-3">
+            <button className="bg-red-500 text-white font-extrabold p-3" onClick={() => push("/passupdate")}>
               Mettre à jour son mot de passe
             </button>
           </li>
