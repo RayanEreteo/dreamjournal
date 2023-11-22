@@ -32,11 +32,12 @@ function LoginUI() {
       .then((res) => res.json())
       .then((data) => {
         setserverResponse(data);
-        setloading(false);
         if (data.success === true) {
           localStorage.setItem('auth_token', data.token)
           localStorage.setItem("user_data",JSON.stringify(data.user_data))
           push("/main")
+        }else{
+          setloading(false);
         }
       })
       .catch((error) => {
@@ -111,15 +112,6 @@ function LoginUI() {
         <p>
           Votre compte a été crée, veuillez vérifier votre boîte mail pour
           activer votre compte.
-        </p>
-      </div>
-      <div
-        className={`register-response mt-6 text-white bg-red-500 w-[100vw] text-center ${
-          fromSource == "main" ? "block" : "hidden"
-        }`}
-      >
-        <p>
-          Votre jeton de connexion a expiré.
         </p>
       </div>
       <div

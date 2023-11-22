@@ -8,7 +8,7 @@ function MainUI() {
   const { userdata } = useAuth();
 
   return (
-    <div className="dashboard">
+    <div className="dashboard min-h-screen">
       <Profilemenu userdata={userdata}/>
       <Dreamjournal />
     </div>
