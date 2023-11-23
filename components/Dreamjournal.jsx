@@ -4,8 +4,10 @@ import { useState } from "react";
 import Dreamslog from "./Dreamslog";
 
 function Dreamjournal() {
-
-  const [dreams, setDreams] = useState([{dream: "test rêve", day: "30 janvier"}])
+  const [dreams, setDreams] = useState([
+    { dream: "test rêve", day: "30 janvier" },
+    { dream: "test deuxieme reve", day: "20 fevrier" },
+  ]);
 
   return (
     <div className="dreamjournal w-[800px] min-h-[800px] m-auto bg-white relative top-[10vh] rounded">
@@ -25,16 +27,25 @@ function Dreamjournal() {
           ></textarea>
           <br />
           <label htmlFor="islucid">Rêve lucide ?</label>
-          <input type="checkbox" name="islucid" id="islucid" required/>
+          <input type="checkbox" name="islucid" id="islucid" />
           <br />
-          <button type="submit" className="p-2 mb-2 rounded bg-sky-500 text-white">Ajouter</button>
+          <button
+            type="submit"
+            className="p-2 mb-2 rounded bg-sky-500 text-white"
+          >
+            Ajouter
+          </button>
         </form>
       </div>
       <hr />
-      <div className="dream-records-container">
-        {dreams.length <= 0 ? <p>Aucun rêve a afficher.</p> : dreams.map((dream) => {
-          return <Dreamslog dream={dream.dream} day={dream.day}/>
-        })}
+      <div className="dream-records-container flex flex-col text-center justify-center align-center">
+        {dreams.length <= 0 ? (
+          <p>Aucun rêve a afficher.</p>
+        ) : (
+          dreams.map((dream) => {
+            return <Dreamslog dream={dream.dream} day={dream.day} />;
+          })
+        )}
       </div>
     </div>
   );
