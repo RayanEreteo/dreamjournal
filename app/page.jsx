@@ -33,9 +33,8 @@ function page() {
         <div className="benefits-container m-auto w-fit mt-[10rem]">
           <h1 className="text-white text-6xl">Pourquoi utiliser Dream Keeper ? </h1>
           <div className="card-container flex flex-row items-center justify-around mt-[4rem]">
-            <Proscard prostitle={"Journal des rêves inclus."} prosdesc={"Créer un compte pour accéder à un journal des rêves."}/>
+            <Proscard prostitle={"Journal des rêves inclus."} prosdesc={"Créer un compte pour accéder à un journal des rêves et écrivez vos rêves au réveil sur n'importe quel appareil."}/>
             <Proscard prostitle={"Découvrez des techniques de mémorisation."} prosdesc={"Découvrez plusieurs techniques pour se souvenir de vos rêves."}/>
-            <Proscard prostitle={"Découvrez des techniques d'induction."} prosdesc={"Découvrez plusieurs techniques pour effectuer des rêves lucides."}/>
           </div>
         </div>
       </motion.div>
