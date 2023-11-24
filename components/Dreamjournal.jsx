@@ -15,7 +15,7 @@ function Dreamjournal({ authToken }) {
 
     const formData = {
       dream_record: e.target.dream_record.value,
-      islucid: e.target.islucid.value,
+      islucid: e.target.islucid.checked ? true : false,
     };
 
     fetch("http://localhost:5000/create_dream", {
@@ -58,7 +58,7 @@ function Dreamjournal({ authToken }) {
           ></textarea>
           <br />
           <label htmlFor="islucid">Rêve lucide ?</label>
-          <input type="checkbox" name="islucid" id="islucid" />
+          <input type="checkbox" name="islucid" id="islucid" value="true"/>
           <br />
           <button
             type="submit"
