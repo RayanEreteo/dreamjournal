@@ -5,12 +5,12 @@ import Dreamjournal from "../Dreamjournal";
 import Profilemenu from "../Profilemenu";
 
 function MainUI() {
-  const { userdata } = useAuth();
+  const { userdata, authToken } = useAuth();
 
   return (
     <div className="dashboard min-h-screen">
       <Profilemenu userdata={userdata}/>
-      <Dreamjournal />
+      <Dreamjournal authToken={authToken}/>
     </div>
   );
 }
