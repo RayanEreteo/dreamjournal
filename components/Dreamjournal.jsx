@@ -53,7 +53,7 @@ function Dreamjournal({ authToken }) {
             id="dream_record"
             cols="30"
             rows="10"
-            className="border-solid border-2 border-sky-500 rounded w-[530px]"
+            className="border-solid border-2 border-sky-500 rounded w-[530px] resize-none"
             required
           ></textarea>
           <br />
