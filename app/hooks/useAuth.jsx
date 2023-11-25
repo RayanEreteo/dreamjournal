@@ -26,6 +26,8 @@ function useAuth() {
       }).then(res => res.json())
       .then(data => {
         if (data.success === false) {
+          localStorage.removeItem("auth_token")
+          localStorage.removeItem("user_data")
           push('/login?from=main')
         }
       })
