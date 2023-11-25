@@ -51,22 +51,45 @@ function Dreamjournal({ authToken }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        // Check if data is an array before setting dreams
         if (Array.isArray(data)) {
           setDreams(data);
         } else {
           console.error("Error: Data is not an array", data);
         }
-        console.log(data);
-        console.log(authToken);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   }, [authToken]);
 
+  function deleteDream(id){
+    const formData = {
+      dream_id: id,
+    }
+    console.log(id)
+
+    fetch("http://localhost:5000/delete_dream", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": authToken
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setserverResponse(data);
+        if(data.success){
+          window.location.reload()
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
+
   return (
-    <div className="dreamjournal w-[800px] min-h-[800px] m-auto bg-white relative top-[10vh] rounded">
+    <div className="dreamjournal max-w-[800px] min-h-[800px] m-auto bg-white relative top-[10vh] rounded">
       <div className="form-container">
         <h1 className="text-4xl text-center mb-2 ">Journal des rêves</h1>
         <hr />
@@ -105,12 +128,12 @@ function Dreamjournal({ authToken }) {
         </form>
       </div>
       <hr />
-      <div className="dream-records-container flex flex-col text-center justify-center align-center">
+      <div className="dream-records-container mt-6">
         {dreams.length <= 0 ? (
           <p>Aucun rêve a afficher.</p>
         ) : (
           dreams.map((dream) => {
-            return <Dreamslog dream={dream.dream_record} day={dream.date} />;
+            return <Dreamslog dream={dream.dream_record} day={dream.date} key={dream._id} id={dream._id} deleteDream={deleteDream}/>;
           })
         )}
       </div>
