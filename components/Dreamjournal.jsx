@@ -130,7 +130,7 @@ function Dreamjournal({ authToken }) {
       <hr />
       <div className="dream-records-container mt-6">
         {dreams.length <= 0 ? (
-          <p>Aucun rêve a afficher.</p>
+          <p className="text-center">Aucun rêve a afficher.</p>
         ) : (
           dreams.map((dream) => {
             return <Dreamslog dream={dream.dream_record} day={dream.date} key={dream._id} id={dream._id} deleteDream={deleteDream}/>;
