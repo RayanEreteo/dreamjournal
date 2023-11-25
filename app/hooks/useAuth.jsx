@@ -18,11 +18,7 @@ function useAuth() {
         setuserData(JSON.parse(storedUserData));
       }
 
-      if (storedAuthToken == null) {
-        push('/login?from=main')
-      }else{
-        setauthToken(storedAuthToken)
-      }
+      setauthToken(storedAuthToken)
 
       fetch("http://localhost:5000/tokenchecker", {
         method: "POST",

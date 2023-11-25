@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Dreamslog from "./Dreamslog";
 
 function Dreamjournal({ authToken }) {
@@ -39,6 +39,31 @@ function Dreamjournal({ authToken }) {
       });
   }
 
+  useEffect(() => {
+    if(!authToken) {return}
+
+    fetch("http://localhost:5000/fetch_dreams", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": authToken
+      }    
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // Check if data is an array before setting dreams
+        if (Array.isArray(data)) {
+          setDreams(data);
+        } else {
+          console.error("Error: Data is not an array", data);
+        }
+        console.log(data);
+        console.log(authToken);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, [authToken]);
 
   return (
     <div className="dreamjournal w-[800px] min-h-[800px] m-auto bg-white relative top-[10vh] rounded">
@@ -85,7 +110,7 @@ function Dreamjournal({ authToken }) {
           <p>Aucun rêve a afficher.</p>
         ) : (
           dreams.map((dream) => {
-            return <Dreamslog dream={dream.dream} day={dream.day} />;
+            return <Dreamslog dream={dream.dream_record} day={dream.date} />;
           })
         )}
       </div>
