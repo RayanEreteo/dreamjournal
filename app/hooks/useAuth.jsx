@@ -20,7 +20,7 @@ function useAuth() {
 
       setauthToken(storedAuthToken)
 
-      fetch("http://localhost:5000/tokenchecker", {
+      fetch("https://dreamkeeper-service.onrender.com/tokenchecker", {
         method: "POST",
         headers: {"authorization": storedAuthToken}
       }).then(res => res.json())

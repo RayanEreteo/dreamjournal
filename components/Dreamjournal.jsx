@@ -42,7 +42,7 @@ function Dreamjournal({ authToken }) {
   useEffect(() => {
     if(!authToken) {return}
 
-    fetch("http://localhost:5000/fetch_dreams", {
+    fetch("https://dreamkeeper-service.onrender.com/fetch_dreams", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +68,7 @@ function Dreamjournal({ authToken }) {
     }
     console.log(id)
 
-    fetch("http://localhost:5000/delete_dream", {
+    fetch("https://dreamkeeper-service.onrender.com/delete_dream", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

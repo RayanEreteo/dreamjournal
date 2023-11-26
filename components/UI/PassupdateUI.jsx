@@ -22,7 +22,7 @@ function PassupdateUI() {
       new_password: e.target.new_password.value,
     };
 
-    fetch("http://localhost:5000/passupdate", {
+    fetch("https://dreamkeeper-service.onrender.com/passupdate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

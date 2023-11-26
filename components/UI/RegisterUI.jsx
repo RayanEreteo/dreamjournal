@@ -20,7 +20,7 @@ function RegisterUI() {
       dream_capability: e.target.dream_capability.value,
     };
 
-    fetch("http://localhost:5000/register", {
+    fetch("https://dreamkeeper-service.onrender.com/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
