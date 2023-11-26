@@ -15,7 +15,7 @@ function page() {
       >
         <div className="title-wrapper text-white text-center m-auto mt-[10rem] w-fit">
           <h1
-            className="title text-9xl font-extrabold text-transparent bg-gradient-to-r bg-clip-text from-purple-400 to-pink-600"
+            className="sm:text-9xl title text-6xl font-extrabold text-transparent bg-gradient-to-r bg-clip-text from-purple-400 to-pink-600"
             id="title"
           >
             Dream Keeper
@@ -30,8 +30,8 @@ function page() {
             S'enregister
           </Button>
         </div>
-        <div className="benefits-container m-auto w-fit mt-[10rem]">
-          <h1 className="text-white text-6xl">Pourquoi utiliser Dream Keeper ? </h1>
+        <div className="sm:block hidden benefits-container m-auto w-fit text-center mt-[10rem]">
+          <h1 className="sm:text-6xl text-white text-3xl">Pourquoi utiliser Dream Keeper ? </h1>
           <div className="card-container flex flex-row items-center justify-around mt-[4rem]">
             <Proscard prostitle={"Journal des rêves inclus."} prosdesc={"Créer un compte pour accéder à un journal des rêves et écrivez vos rêves au réveil sur n'importe quel appareil."}/>
             <Proscard prostitle={"Découvrez des techniques de mémorisation."} prosdesc={"Découvrez plusieurs techniques pour se souvenir de vos rêves."}/>

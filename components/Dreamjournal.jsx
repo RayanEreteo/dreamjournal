@@ -89,7 +89,7 @@ function Dreamjournal({ authToken }) {
   }
 
   return (
-    <div className="dreamjournal max-w-[800px] min-h-[800px] m-auto mt-6 bg-white relative rounded">
+    <div className="dreamjournal max-w-[800px] min-h-[800px] m-auto mt-6 bg-white rounded">
       <div className="form-container">
         <h1 className="text-4xl text-center mb-2 ">Journal des rêves</h1>
         <hr />
@@ -128,7 +128,7 @@ function Dreamjournal({ authToken }) {
         </form>
       </div>
       <hr />
-      <div className="dream-records-container mt-6">
+      <div className="dream-records-container mt-6 mb-6">
         {dreams.length <= 0 ? (
           <p className="text-center">Aucun rêve a afficher.</p>
         ) : (

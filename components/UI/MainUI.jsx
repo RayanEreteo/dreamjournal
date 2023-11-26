@@ -11,7 +11,7 @@ function MainUI() {
     <div className="dashboard min-h-screen">
       <Profilemenu userdata={userdata}/>
       <Dreamjournal authToken={authToken}/>
-      <div className="warning-message bg-red-500">
+      <div className="warning-message bg-red-500 text-center text-white mt-6">
         <p>Les articles sont toujours en développement, merci de votre compréhension.</p>
       </div>
     </div>
