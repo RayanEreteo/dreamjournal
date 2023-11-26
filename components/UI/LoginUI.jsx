@@ -22,7 +22,7 @@ function LoginUI() {
       password: e.target.password.value,
     };
 
-    fetch("http://localhost:5000/login", {
+    fetch("https://dreamkeeper-service.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
