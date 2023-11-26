@@ -89,7 +89,7 @@ function Dreamjournal({ authToken }) {
   }
 
   return (
-    <div className="dreamjournal max-w-[800px] min-h-[800px] m-auto bg-white relative top-[10vh] rounded">
+    <div className="dreamjournal max-w-[800px] min-h-[800px] m-auto mt-6 bg-white relative rounded">
       <div className="form-container">
         <h1 className="text-4xl text-center mb-2 ">Journal des rêves</h1>
         <hr />
@@ -133,7 +133,7 @@ function Dreamjournal({ authToken }) {
           <p className="text-center">Aucun rêve a afficher.</p>
         ) : (
           dreams.map((dream) => {
-            return <Dreamslog dream={dream.dream_record} day={dream.date} key={dream._id} id={dream._id} deleteDream={deleteDream}/>;
+            return <Dreamslog dream={dream.dream_record} day={dream.date} islucid={dream.islucid} key={dream._id} id={dream._id} deleteDream={deleteDream}/>;
           })
         )}
       </div>

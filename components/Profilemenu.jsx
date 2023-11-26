@@ -14,7 +14,7 @@ function Profilemenu({ userdata }) {
   }
 
   return (
-    <div className="profile-menu-container fixed absolute">
+    <div className="profile-menu-container fixed absolute top-0">
         <button
           className="open-profile-button bg-cyan-500 text-white font-extrabold p-3"
           onClick={() => {
