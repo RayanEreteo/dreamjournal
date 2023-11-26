@@ -14,7 +14,7 @@ function Profilemenu({ userdata }) {
   }
 
   return (
-    <div className="profile-menu-container fixed absolute top-0">
+    <div className="sm:fixed sm:absolute sm:top-0 profile-menu-container m-auto w-fit">
         <button
           className="open-profile-button bg-cyan-500 text-white font-extrabold p-3"
           onClick={() => {
