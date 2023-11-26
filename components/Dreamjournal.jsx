@@ -18,7 +18,7 @@ function Dreamjournal({ authToken }) {
       islucid: e.target.islucid.checked ? true : false,
     };
 
-    fetch("http://localhost:5000/create_dream", {
+    fetch("https://dreamkeeper-service.onrender.com/create_dream", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
